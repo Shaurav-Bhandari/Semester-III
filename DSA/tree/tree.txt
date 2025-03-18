@@ -1,0 +1,65 @@
+C representation for binary tree:
+-----------------------------------
+struct node
+{
+    int data;
+    struct node * leftChild;
+    struct node * rightChild;
+}
+
+struct node *root = NULL;
+
+Binary Tree traversal:
+-----------------------------
+-Traversing a tree means visiting each node in a specified order.
+-The Tree traversal is a way in which each node in a tree is visited exactly once in a symmetric manner.
+-There are three methods of tree traversal:
+    -pre-order traversal: -> rootNode, leftChild, rightChild
+        -visit root node
+        -traverse left-subtree.
+        -traverse right-subtree
+    -in-order traversal: -> (leftChild, rootNode, rightChild)
+        - Traverse left-subtree
+        -visit rootNode
+        -Traverse right-subtree
+    -Post-order traversal: -> left, right, root
+        - Traverse left-subtree
+        - Traverse right-subtree
+
+Binary Search Tree
+---------------------
+Construct BST using the following given sequence:
+14,15,4,9,7,18,3,5,16,4,20,17,9
+
+Operation in BST:
+---------------------
+- Searching
+- insertion
+- Deletion
+
+Algorithm for BST Searching:
+--start
+--check whether the value in current node and Search value are equal. 
+--If true, the required value is found.
+--else{
+    --if search value < current node{
+        if currentNode.leftChild == NULL return NULL; //the search value doesn't exist
+        else handle left child with same algorithm
+    }
+    else if search value > current node{
+        if currentNode.right == NULL return NULL; //the search value doesn't exist
+        else handle right child with same algorithm
+    }
+}
+--stop.
+
+
+# Algorithm for insertion of a node in BST
+# Deletion of node from the BST:
+-----------------------------------------
+1. The node to be deleted may be a leaf node.
+2. The node to be deleted has one child.
+3. The node to be deleted has two child.
+
+# Concept and example of balanced binary tree
+-The first balanced binary tree is AVL tree -> An AVL tree defined as a self-balancing Binary Search Tree (BST) where the difference between heights of left and right subtrees for any node cannot be more than one. It checks the height of left and right subtree and assumes the difference is not more than 1. The difference is called balance factor. The balance number at each node is -1,0,1.
